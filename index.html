@@ -5,998 +5,258 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Transform Your Life - Herbalife Wellness Coach</title>
 <style>
-:root{
-  --primary-green:#7CB342;
-  --dark-green:#558B2F;
-  --accent-green:#9CCC65;
-  --black:#1a1a1a;
-  --gray:#4a4a4a;
-  --light-bg:#f4f7f4;
-  --white:#ffffff;
-  --danger:#e53935;
-}
+:root{--primary-green:#7CB342;--dark-green:#558B2F;--accent-green:#9CCC65;--black:#1a1a1a;--gray:#4a4a4a;--light-bg:#f4f7f4;--white:#ffffff;--danger:#e53935}
 *{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
-  background:linear-gradient(135deg,#f4f7f4 0%,#e8f0e8 100%);
-  color:var(--black);
-  line-height:1.6;
-}
-.texture-overlay{
-  position:fixed;inset:0;
-  background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="%23558B2F" opacity="0.03"/><circle cx="30" cy="30" r="1" fill="%23558B2F" opacity="0.03"/><circle cx="50" cy="50" r="1" fill="%23558B2F" opacity="0.03"/><circle cx="70" cy="70" r="1" fill="%23558B2F" opacity="0.03"/><circle cx="90" cy="90" r="1" fill="%23558B2F" opacity="0.03"/></svg>');
-  background-size:50px 50px;
-  pointer-events:none;
-  z-index:1;
-}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:linear-gradient(135deg,#f4f7f4 0%,#e8f0e8 100%);color:var(--black);line-height:1.6}
+.texture-overlay{position:fixed;inset:0;background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%23558B2F" opacity="0.03"/></svg>');background-size:50px 50px;pointer-events:none;z-index:1}
 .container{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:20px}
-.organization-header{
-  position:fixed;top:20px;left:20px;
-  background:rgba(255,255,255,.95);
-  padding:14px 22px;border-radius:12px;
-  box-shadow:0 6px 22px rgba(85,139,47,.18);
-  z-index:1000;border:2px solid var(--primary-green);
-  backdrop-filter:blur(6px);
-}
-.organization-header h3{margin:0;color:var(--dark-green);font-size:1.15em;font-weight:800;letter-spacing:.3px}
-@media(max-width:768px){
-  .organization-header{position:static;margin:0 0 16px 0;text-align:center}
-}
-.btn{
-  background:linear-gradient(135deg,var(--primary-green) 0%,var(--dark-green) 100%);
-  color:var(--white);border:none;
-  padding:12px 26px;border-radius:10px;
-  font-size:16px;font-weight:700;cursor:pointer;
-  transition:all .25s ease;
-  letter-spacing:.3px;
-}
+.organization-header{position:fixed;top:20px;left:20px;background:rgba(255,255,255,.95);padding:14px 22px;border-radius:12px;box-shadow:0 6px 22px rgba(85,139,47,.18);z-index:1000;border:2px solid var(--primary-green);backdrop-filter:blur(6px)}
+.organization-header h3{margin:0;color:var(--dark-green);font-size:1.15em;font-weight:800}
+@media(max-width:768px){.organization-header{position:static;margin:0 0 16px 0;text-align:center}}
+.btn{background:linear-gradient(135deg,var(--primary-green) 0%,var(--dark-green) 100%);color:#fff;border:none;padding:12px 26px;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;transition:all .25s ease}
 .btn:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(124,179,66,.25)}
-.btn-secondary{background:var(--black)}
-.btn-danger{background:var(--danger)}
-.btn:disabled{opacity:.6;cursor:not-allowed;transform:none;box-shadow:none}
-.toggle-admin{
-  position:fixed;bottom:20px;right:20px;
-  background:var(--dark-green);color:#fff;border:none;
-  padding:14px 22px;border-radius:999px;
-  cursor:pointer;font-weight:800;
-  box-shadow:0 10px 25px rgba(0,0,0,.25);
-  z-index:1200;
-}
-.admin-panel{
-  display:none;
-  background:var(--white);
-  border-radius:16px;
-  padding:26px;
-  margin-bottom:30px;
-  box-shadow:0 10px 30px rgba(85,139,47,.12);
-  border:2px solid var(--primary-green);
-}
-.admin-panel h2{color:var(--dark-green);margin-bottom:16px;display:flex;align-items:center;gap:10px}
-.admin-controls{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:18px;
-  margin-bottom:18px;
-}
+.btn-secondary{background:var(--black)}.btn-danger{background:var(--danger)}
+.toggle-admin{position:fixed;bottom:20px;right:20px;background:var(--dark-green);color:#fff;border:none;padding:14px 22px;border-radius:999px;cursor:pointer;font-weight:800;box-shadow:0 10px 25px rgba(0,0,0,.25);z-index:1200}
+.admin-panel{display:none;background:#fff;border-radius:16px;padding:26px;margin-bottom:30px;box-shadow:0 10px 30px rgba(85,139,47,.12);border:2px solid var(--primary-green)}
+.admin-panel h2{color:var(--dark-green);margin-bottom:16px}
+.admin-controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-bottom:18px}
 .control-group{display:flex;flex-direction:column;gap:8px}
 .control-group label{font-weight:700;color:var(--gray);font-size:14px}
-.control-group input,.control-group textarea{
-  padding:12px;border:2px solid var(--accent-green);
-  border-radius:10px;font-size:16px;transition:all .25s ease;
-}
+.control-group input,.control-group textarea{padding:12px;border:2px solid var(--accent-green);border-radius:10px;font-size:16px;transition:all .25s ease}
 .control-group textarea{resize:vertical}
-.control-group input:focus,.control-group textarea:focus{
-  outline:none;border-color:var(--primary-green);
-  box-shadow:0 0 0 3px rgba(124,179,66,.12);
-}
-.gallery-admin{
-  padding:18px;background:var(--light-bg);
-  border-radius:12px;margin-top:10px;
-  border:1px solid rgba(124,179,66,.25);
-}
-.success-message{
-  background:#4CAF50;color:#fff;
-  padding:14px;border-radius:10px;margin-top:14px;
-  display:none;font-weight:700;
-}
-.hero-banner{
-  background:linear-gradient(135deg,var(--dark-green) 0%,var(--black) 100%);
-  color:var(--white);
-  padding:60px 40px;border-radius:22px;
-  text-align:center;margin-bottom:40px;
-  box-shadow:0 18px 45px rgba(0,0,0,.28);
-  position:relative;overflow:hidden;
-}
-.hero-banner::before{
-  content:'';
-  position:absolute;top:-50%;right:-50%;
-  width:200%;height:200%;
-  background:radial-gradient(circle,rgba(124,179,66,.11) 0%,transparent 70%);
-  animation:pulse 15s ease-in-out infinite;
-}
+.success-message{background:#4CAF50;color:#fff;padding:14px;border-radius:10px;margin-top:14px;display:none;font-weight:700}
+.hero-banner{background:linear-gradient(135deg,var(--dark-green) 0%,var(--black) 100%);color:#fff;padding:60px 40px;border-radius:22px;text-align:center;margin-bottom:40px;box-shadow:0 18px 45px rgba(0,0,0,.28);position:relative;overflow:hidden}
+.hero-banner::before{content:'';position:absolute;top:-50%;right:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(124,179,66,.11) 0%,transparent 70%);animation:pulse 15s ease-in-out infinite}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
 .hero-content{position:relative;z-index:1}
 .hero-banner h1{font-size:3em;margin-bottom:12px;text-shadow:2px 2px 4px rgba(0,0,0,.3)}
 .hero-banner .tagline{font-size:1.5em;margin-bottom:10px;color:var(--accent-green);font-weight:800}
-.hero-banner .subtitle{font-size:1.1em;opacity:.92;margin-bottom:0}
-.holistic-section,.gallery-section,.contact-section{
-  background:var(--white);
-  border-radius:16px;
-  padding:40px;
-  margin-bottom:40px;
-  box-shadow:0 10px 30px rgba(85,139,47,.12);
-}
-.holistic-section h2,.gallery-section h2,.contact-section h2{
-  color:var(--dark-green);
-  text-align:center;margin-bottom:30px;
-  font-size:2.2em;
-}
-.holistic-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:22px;
-}
-.holistic-card{
-  background:linear-gradient(135deg,var(--light-bg) 0%,var(--white) 100%);
-  padding:24px;border-radius:14px;
-  text-align:center;border:2px solid var(--accent-green);
-  transition:all .25s ease;
-  cursor:pointer;
-}
-.holistic-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 12px 26px rgba(124,179,66,.18);
-  border-color:var(--primary-green);
-}
+.hero-banner .subtitle{font-size:1.1em;opacity:.92}
+.section-card{background:#fff;border-radius:16px;padding:40px;margin-bottom:40px;box-shadow:0 10px 30px rgba(85,139,47,.12)}
+.section-card h2{color:var(--dark-green);text-align:center;margin-bottom:30px;font-size:2.2em}
+.holistic-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+.holistic-card{background:linear-gradient(135deg,var(--light-bg) 0%,#fff 100%);padding:24px;border-radius:14px;text-align:center;border:2px solid var(--accent-green);transition:all .25s ease}
+.holistic-card:hover{transform:translateY(-6px);box-shadow:0 12px 26px rgba(124,179,66,.18)}
 .holistic-card .icon{font-size:3em;margin-bottom:12px}
 .holistic-card h3{color:var(--dark-green);margin-bottom:8px}
-.holistic-card p{color:var(--gray);font-size:.95em}
-.gallery-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:22px;
-}
-.gallery-item{
-  position:relative;border-radius:14px;
-  overflow:hidden;
-  box-shadow:0 10px 22px rgba(0,0,0,.18);
-  transition:all .25s ease;
-  border:3px solid var(--primary-green);
-  background:var(--light-bg);
-  min-height:300px;
-}
-.gallery-item:hover{transform:scale(1.02);box-shadow:0 16px 32px rgba(124,179,66,.18)}
-.gallery-item img{width:100%;height:300px;object-fit:cover;display:block}
-.gallery-placeholder{
-  height:300px;display:flex;align-items:center;justify-content:center;
-  color:var(--gray);font-size:1.1em;font-weight:700;
-}
-.gallery-item .overlay{
-  position:absolute;bottom:0;left:0;right:0;
-  background:linear-gradient(to top,rgba(0,0,0,.82),transparent);
-  color:#fff;padding:14px;
-  transform:translateY(100%);
-  transition:all .25s ease;
-}
+/* Gallery */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+.gallery-item{position:relative;border-radius:14px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.15);transition:all .25s ease;border:3px solid var(--primary-green);background:var(--light-bg)}
+.gallery-item:hover{transform:scale(1.02);box-shadow:0 16px 32px rgba(124,179,66,.2)}
+.gallery-item img{width:100%;height:280px;object-fit:cover;display:block}
+.gallery-item .overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,.8),transparent);color:#fff;padding:14px;transform:translateY(100%);transition:all .25s ease}
 .gallery-item:hover .overlay{transform:translateY(0)}
-.remove-btn{
-  position:absolute;top:10px;right:10px;
-  background:var(--danger);color:#fff;border:none;
-  border-radius:999px;width:34px;height:34px;
-  cursor:pointer;font-size:20px;z-index:10;
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 10px 18px rgba(229,57,53,.25);
-}
-.remove-btn:hover{filter:brightness(.95)}
-.whatsapp-section{
-  background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);
-  color:#fff;padding:40px;border-radius:16px;text-align:center;
-  margin-bottom:40px;box-shadow:0 10px 26px rgba(37,211,102,.22);
-}
-.whatsapp-section h2{margin-bottom:12px}
-.whatsapp-btn{
-  background:#fff;color:#25D366;
-  padding:15px 38px;border-radius:999px;
-  font-size:1.15em;font-weight:900;
-  text-decoration:none;display:inline-block;
-  transition:all .25s ease;
-}
-.whatsapp-btn:hover{transform:scale(1.05);box-shadow:0 14px 30px rgba(255,255,255,.25)}
+.gallery-badge{position:absolute;top:10px;left:10px;background:var(--primary-green);color:#fff;font-size:11px;font-weight:800;padding:4px 10px;border-radius:999px}
+/* WhatsApp */
+.whatsapp-section{background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);color:#fff;padding:40px;border-radius:16px;text-align:center;margin-bottom:40px;box-shadow:0 10px 26px rgba(37,211,102,.22)}
+.whatsapp-btn{background:#fff;color:#25D366;padding:15px 38px;border-radius:999px;font-size:1.15em;font-weight:900;text-decoration:none;display:inline-block;transition:all .25s ease}
+.whatsapp-btn:hover{transform:scale(1.05)}
+/* Contact */
 .contact-form{max-width:600px;margin:0 auto}
 .form-group{margin-bottom:18px}
 .form-group label{display:block;margin-bottom:8px;font-weight:800;color:var(--gray)}
-.form-group input,.form-group textarea,.form-group select{
-  width:100%;padding:12px;border:2px solid var(--accent-green);
-  border-radius:10px;font-size:16px;transition:all .25s ease;
-}
-.form-group textarea{min-height:120px;resize:vertical}
-.form-group input:focus,.form-group textarea:focus,.form-group select:focus{
-  outline:none;border-color:var(--primary-green);
-  box-shadow:0 0 0 3px rgba(124,179,66,.12);
-}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:12px;border:2px solid var(--accent-green);border-radius:10px;font-size:16px}
+.form-group textarea{min-height:120px}
 .footer{text-align:center;padding:18px;color:var(--gray);font-size:.9em}
-@media(max-width:768px){
-  .hero-banner h1{font-size:2em}
-  .hero-banner .tagline{font-size:1.2em}
-  .admin-controls{grid-template-columns:1fr}
-  .gallery-grid{grid-template-columns:1fr}
-}
-.modal{
-  display:none;position:fixed;inset:0;
-  z-index:2000;background:rgba(0,0,0,.7);
-  overflow:auto;
-}
-.modal-content{
-  background:#fff;margin:5% auto;
-  border-radius:16px;width:92%;max-width:820px;
-  box-shadow:0 18px 55px rgba(0,0,0,.35);
-  animation:modalIn .22s ease;
-  overflow:hidden;
-}
-@keyframes modalIn{from{transform:translateY(-30px);opacity:0}to{transform:translateY(0);opacity:1}}
-.modal-header{
-  background:linear-gradient(135deg,var(--dark-green) 0%,var(--primary-green) 100%);
-  color:#fff;padding:22px 26px;
-  display:flex;justify-content:space-between;align-items:center;
-}
-.modal-header h2{margin:0;font-size:1.6em}
-.close-modal{
-  color:#fff;font-size:34px;font-weight:900;
-  cursor:pointer;background:none;border:none;
-  transition:transform .2s;
-}
-.close-modal:hover{transform:scale(1.15)}
-.modal-body{padding:26px;color:var(--black);line-height:1.8}
-.modal-body h3{color:var(--dark-green);margin:18px 0 10px;font-size:1.3em}
-.modal-body p{margin-bottom:12px;font-size:1.05em}
-.modal-body ul{margin:12px 0;padding-left:22px}
-.modal-body li{margin-bottom:8px;font-size:1.03em}
-.register-btn{
-  background:linear-gradient(135deg,var(--primary-green) 0%,var(--dark-green) 100%);
-  color:#fff;padding:14px 34px;border:none;border-radius:999px;
-  font-size:1.05em;font-weight:900;cursor:pointer;
-  transition:all .25s ease;
-  display:inline-block;
-}
-.register-btn:hover{transform:scale(1.04);box-shadow:0 14px 30px rgba(124,179,66,.22)}
-.login-modal{
-  display:none;position:fixed;inset:0;
-  z-index:3000;background:rgba(0,0,0,.72);
-  align-items:center;justify-content:center;
-  padding:18px;
-}
-.login-card{
-  width:100%;max-width:460px;background:#fff;
-  border-radius:18px;overflow:hidden;
-  box-shadow:0 20px 60px rgba(0,0,0,.38);
-  animation:modalIn .22s ease;
-  border:2px solid rgba(124,179,66,.25);
-}
-.login-head{
-  padding:20px 22px;
-  background:linear-gradient(135deg,var(--black) 0%,var(--dark-green) 100%);
-  color:#fff;
-}
-.login-head h3{margin:0;font-size:1.25em}
-.login-body{padding:18px 22px}
-.login-row{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
-.login-row label{font-weight:800;color:var(--gray);font-size:14px}
-.login-row input{
-  padding:12px;border:2px solid var(--accent-green);
-  border-radius:12px;font-size:16px;
-}
-.login-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:10px}
-.login-hint{
-  font-size:12px;color:#6b6b6b;margin-top:10px;
-  background:rgba(124,179,66,.08);
-  padding:10px 12px;border-radius:12px;
-  border:1px dashed rgba(124,179,66,.35);
-}
-.toast{
-  position:fixed;left:50%;bottom:90px;transform:translateX(-50%);
-  background:rgba(0,0,0,.86);color:#fff;
-  padding:12px 16px;border-radius:999px;
-  font-weight:800;z-index:4000;
-  display:none;
-}
+.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:rgba(0,0,0,.86);color:#fff;padding:12px 22px;border-radius:999px;font-weight:800;z-index:4000;display:none;white-space:nowrap}
+@media(max-width:768px){.hero-banner h1{font-size:2em}.hero-banner .tagline{font-size:1.2em}.admin-controls{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.gallery-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="texture-overlay"></div>
-
-<!-- Fixed Header -->
-<div class="organization-header">
-  <h3>🌿 CORE VITALITY MISSION</h3>
-</div>
-
+<div class="organization-header"><h3>🌿 CORE VITALITY MISSION</h3></div>
 <div class="container">
 
-  <!-- Admin Panel -->
-  <div id="adminPanel" class="admin-panel" aria-hidden="true">
-    <h2>🔧 Admin Panel - Customize Your Page</h2>
-    <div class="admin-controls">
-
-      <!-- FIX 5: Photo Upload Field ADDED above coachName -->
-      <div class="control-group">
-        <label for="coachPhotoUpload">📷 Profile Photo (Hero mein dikhegi):</label>
-        <input type="file" id="coachPhotoUpload" accept="image/*" style="padding:8px;" />
-        <div style="margin-top:8px;display:flex;align-items:center;gap:12px;">
-          <img id="coachPhotoPreview" src="" alt="Preview"
-            style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid #7CB342;display:none;" />
-          <button type="button" id="btnRemovePhoto" class="btn btn-danger"
-            style="display:none;padding:8px 14px;font-size:13px;">🗑 Remove Photo</button>
-        </div>
-      </div>
-
-      <div class="control-group">
-        <label for="coachName">Gagan Verma / Coach Name:</label>
-        <input type="text" id="coachName" placeholder="GAGAN VERMA" />
-      </div>
-
-      <div class="control-group">
-        <label for="whatsappNumber">WhatsApp Number (with country code):</label>
-        <input type="tel" id="whatsappNumber" placeholder="7973359934" />
-      </div>
-
-      <div class="control-group">
-        <label for="tagline">Tagline / Subtitle:</label>
-        <input type="text" id="tagline" placeholder="Your transformation journey starts here" />
-      </div>
-
-      <div class="control-group">
-        <label for="googleFormUrl">Google Form URL (for contact form):</label>
-        <input type="url" id="googleFormUrl" placeholder="https://forms.gle/sHTm6iNedZhmceKL6" />
-      </div>
-
-      <div class="control-group">
-        <label for="aboutText">About You / Introduction:</label>
-        <textarea id="aboutText" rows="4"></textarea>
+<!-- Admin Panel -->
+<div id="adminPanel" class="admin-panel">
+  <h2>🔧 Admin Panel - Customize Your Page</h2>
+  <div class="admin-controls">
+    <div class="control-group">
+      <label for="coachPhotoUpload">📷 Profile Photo:</label>
+      <input type="file" id="coachPhotoUpload" accept="image/*" style="padding:8px;" />
+      <div style="margin-top:8px;display:flex;align-items:center;gap:12px;">
+        <img id="coachPhotoPreview" src="" alt="Preview" style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid #7CB342;display:none;" />
+        <button type="button" id="btnRemovePhoto" class="btn btn-danger" style="display:none;padding:8px 14px;font-size:13px;">🗑 Remove Photo</button>
       </div>
     </div>
+    <div class="control-group"><label for="coachName">Your Name / Coach Name:</label><input type="text" id="coachName" placeholder="GAGAN VERMA" /></div>
+    <div class="control-group"><label for="whatsappNumber">WhatsApp Number:</label><input type="tel" id="whatsappNumber" placeholder="7973359934" /></div>
+    <div class="control-group"><label for="tagline">Tagline / Subtitle:</label><input type="text" id="tagline" placeholder="Your transformation journey starts here" /></div>
+    <div class="control-group"><label for="googleFormUrl">Google Form URL:</label><input type="url" id="googleFormUrl" placeholder="https://forms.gle/..." /></div>
+    <div class="control-group"><label for="aboutText">About You:</label><textarea id="aboutText" rows="4"></textarea></div>
+  </div>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;">
+    <button id="btnUpdate" class="btn">✅ Save Changes</button>
+    <button id="btnHideAdmin" class="btn btn-secondary">Hide Panel</button>
+  </div>
+  <div id="successMessage" class="success-message">✅ Page updated successfully!</div>
+</div>
 
-    <!-- Gallery Admin -->
-    <div class="gallery-admin">
-      <h3>📸 Manage Gallery Images</h3>
-      <div class="control-group" style="margin-top:12px;">
-        <label for="imageUpload">Upload Transformation Images (Max 10):</label>
-        <input type="file" id="imageUpload" accept="image/*" />
-        <small style="color:var(--gray);">Upload before/after transformation photos to showcase on your page</small>
-      </div>
+<!-- Hero -->
+<div class="hero-banner">
+  <div class="hero-content">
+    <div style="margin-bottom:16px;">
+      <img id="heroProfilePhoto" src="" alt="Coach Photo" style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid #9CCC65;box-shadow:0 6px 22px rgba(0,0,0,.35);display:none;margin:0 auto;" />
     </div>
-
-    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;">
-      <button id="btnUpdate" class="btn">✅ Update Page</button>
-      <button id="btnHideAdmin" class="btn btn-secondary">Hide Admin Panel</button>
-      <button id="btnLogout" class="btn btn-danger">🚪 Logout</button>
-    </div>
-    <div id="successMessage" class="success-message">✅ Page updated successfully!</div>
-  </div>
-
-  <!-- Hero Banner -->
-  <div class="hero-banner">
-    <div class="hero-content">
-      <!-- FIX 4: Profile photo in hero -->
-      <div style="margin-bottom:16px;">
-        <img id="heroProfilePhoto" src="" alt="Coach Photo"
-          style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid #9CCC65;box-shadow:0 6px 22px rgba(0,0,0,.35);display:none;margin:0 auto;" />
-      </div>
-      <h1 id="displayName">Gagan Verma</h1>
-      <div class="tagline" id="displayTagline">Transform Your Body, Transform Your Life</div>
-      <div class="subtitle" id="displayAbout">Certified Wellness Coach &amp; Nutrition Expert<br>Helping people achieve their health goals through personalized nutrition and fitness guidance.</div>
-    </div>
-  </div>
-
-  <!-- Holistic Wellness -->
-  <div class="holistic-section">
-    <h2>🌿 Our Holistic Wellness Approach</h2>
-    <div class="holistic-grid">
-      <div class="holistic-card" data-modal="nutrition">
-        <div class="icon">🥗</div>
-        <h3>Nutrition</h3>
-        <p>Personalized meal plans and premium Herbalife nutrition products for optimal health</p>
-      </div>
-      <div class="holistic-card">
-        <div class="icon">💪</div>
-        <h3>Fitness</h3>
-        <p>Customized workout programs designed for your body type and goals</p>
-      </div>
-      <div class="holistic-card" data-modal="wellness">
-        <div class="icon">🧘</div>
-        <h3>Wellness</h3>
-        <p>Mind-body balance through yoga, meditation, and lifestyle coaching</p>
-      </div>
-      <div class="holistic-card">
-        <div class="icon">📊</div>
-        <h3>Tracking</h3>
-        <p>Regular progress monitoring and adjustments for consistent results</p>
-      </div>
-      <div class="holistic-card">
-        <div class="icon">🎯</div>
-        <h3>Goal Setting</h3>
-        <p>Clear, achievable milestones to keep you motivated and on track</p>
-      </div>
-      <div class="holistic-card">
-        <div class="icon">👥</div>
-        <h3>Community</h3>
-        <p>Supportive network of like-minded individuals on their wellness journey</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Gallery -->
-  <div class="gallery-section">
-    <h2>✨ Transformation Gallery - Real Results</h2>
-    <div id="galleryGrid" class="gallery-grid"></div>
-  </div>
-
-  <!-- WhatsApp -->
-  <div class="whatsapp-section">
-    <h2>💬 Ready to Start Your Transformation?</h2>
-    <p style="margin-bottom:20px;">Connect with me on WhatsApp for personalized guidance!</p>
-    <a id="whatsappLink" href="#" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">📱 Chat on WhatsApp</a>
-  </div>
-
-  <!-- Contact Form -->
-  <div class="contact-section">
-    <h2>📝 Get Your Free Consultation</h2>
-    <form id="contactForm" class="contact-form">
-      <div class="form-group">
-        <label for="name">Full Name *</label>
-        <input type="text" id="name" name="name" required />
-      </div>
-      <div class="form-group">
-        <label for="phone">Phone Number *</label>
-        <input type="tel" id="phone" name="phone" required />
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" />
-      </div>
-      <div class="form-group">
-        <label for="goal">Your Health Goal *</label>
-        <select id="goal" name="goal" required>
-          <option value="">Select your goal</option>
-          <option value="weight-loss">Weight Loss</option>
-          <option value="weight-gain">Weight Gain / Muscle Building</option>
-          <option value="fitness">Overall Fitness</option>
-          <option value="nutrition">Better Nutrition</option>
-          <option value="energy">More Energy</option>
-          <option value="lifestyle">Lifestyle Change</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="message">Tell us about yourself</label>
-        <textarea id="message" name="message"></textarea>
-      </div>
-      <button type="submit" class="btn" style="width:100%;font-size:1.1em;">Submit &amp; Get Free Consultation</button>
-    </form>
-  </div>
-
-  <div class="footer">
-    <p>© 2026 &nbsp;<span id="footerName">Gagan Verma</span>&nbsp; - Herbalife Independent Distributor</p>
-    <p>Transforming Lives Through Wellness | Ludhiana, Punjab, India</p>
-  </div>
-</div><!-- /container -->
-
-<!-- Nutrition Modal -->
-<div id="nutritionModal" class="modal" aria-hidden="true">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2>🥗 Nutraceuticals - The Science of Healing Through Nutrition</h2>
-      <button class="close-modal" data-close="nutrition" aria-label="Close">×</button>
-    </div>
-    <div class="modal-body">
-      <h3>🌟 Food is Medicine - Nature's Healing Power</h3>
-      <p>Nutraceuticals combine the power of <strong>Nutrition + Pharmaceuticals</strong> to create natural healing solutions. When you consume the right nutrients, your body has an incredible ability to repair, rejuvenate, and restore itself naturally.</p>
-      <h3>💊 What Are Nutraceuticals?</h3>
-      <p>Nutraceuticals are bioactive compounds derived from food sources that provide health benefits beyond basic nutrition. These include:</p>
-      <ul>
-        <li><strong>Proteins &amp; Amino Acids</strong> - Building blocks for muscle repair and cellular regeneration</li>
-        <li><strong>Vitamins &amp; Minerals</strong> - Essential for immune function and metabolic processes</li>
-        <li><strong>Antioxidants</strong> - Combat free radicals and support healthy aging</li>
-        <li><strong>Probiotics</strong> - Support digestive health and gut microbiome</li>
-        <li><strong>Omega Fatty Acids</strong> - Promote heart and brain health</li>
-        <li><strong>Herbal Extracts</strong> - Natural compounds with therapeutic properties</li>
-      </ul>
-      <h3>🔬 How Your Body Self-Repairs with Proper Nutrition</h3>
-      <ul>
-        <li>✅ <strong>Cellular Regeneration</strong> - Damaged cells are replaced with healthy ones</li>
-        <li>✅ <strong>Immune Boost</strong> - Your natural defense system becomes stronger</li>
-        <li>✅ <strong>Inflammation Reduction</strong> - Chronic inflammation decreases naturally</li>
-        <li>✅ <strong>Energy Restoration</strong> - Better nutrient utilization supports sustained energy</li>
-        <li>✅ <strong>Hormonal Balance</strong> - Balanced nutrition supports healthier regulation</li>
-        <li>✅ <strong>Mental Clarity</strong> - Improved nutrition supports focus and mood</li>
-      </ul>
-      <h3>🌿 Herbalife Nutraceuticals - Science-Backed Solutions</h3>
-      <p>Our premium products are formulated with researched nutraceutical ingredients to support your body's natural wellness processes. Each product is designed to target specific health needs while promoting overall balance.</p>
-      <div style="text-align:center;margin-top:22px;">
-        <button id="btnNutritionCTA" class="register-btn">📞 Register for Live Counselling Session</button>
-        <p style="margin-top:10px;font-size:.9em;color:var(--gray);">Get personalized guidance from certified experts</p>
-      </div>
-    </div>
+    <h1 id="displayName">Your Name</h1>
+    <div class="tagline" id="displayTagline">Transform Your Body, Transform Your Life</div>
+    <div class="subtitle" id="displayAbout">Certified Wellness Coach &amp; Nutrition Expert<br>Helping people achieve their health goals through personalized nutrition and fitness guidance.</div>
   </div>
 </div>
 
-<!-- Wellness Modal -->
-<div id="wellnessModal" class="modal" aria-hidden="true">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2>🧘 Holistic Wellness - Heal Your Mind, Body &amp; Soul</h2>
-      <button class="close-modal" data-close="wellness" aria-label="Close">×</button>
-    </div>
-    <div class="modal-body">
-      <h3>🌸 Transform Your Life from Within</h3>
-      <p>True wellness goes beyond physical health. We offer programs that support mental, emotional, and lifestyle well-being—so your results are not temporary, they become your new normal.</p>
-      <h3>🧠 Our Wellness Programs Include</h3>
-      <ul>
-        <li><strong>Meditation &amp; Mindfulness</strong> - Calm the mind, reduce stress, improve daily focus</li>
-        <li><strong>Breathwork Practices</strong> - Simple techniques to regulate emotions and energy</li>
-        <li><strong>Life Counselling Sessions</strong> - Build confidence, clarity, and stronger habits</li>
-        <li><strong>Mind-Body Routine Design</strong> - Daily structure for consistency and balance</li>
-        <li><strong>Healing &amp; Reset Programs</strong> - Let go of burnout, rebuild inner strength</li>
-      </ul>
-      <h3>🌟 Benefits You'll Experience</h3>
-      <ul>
-        <li>✨ Deep inner calm and better sleep quality</li>
-        <li>✨ Better decision-making and self-control</li>
-        <li>✨ Emotional stability and higher motivation</li>
-        <li>✨ Improved relationships through better communication</li>
-        <li>✨ More energy with less mental fatigue</li>
-      </ul>
-      <h3>💫 Group &amp; Individual Sessions Available</h3>
-      <p>Choose one-on-one support or the momentum of a community. Our team guides you step-by-step to build healthier routines that last.</p>
-      <div style="text-align:center;margin-top:22px;">
-        <button id="btnWellnessCTA" class="register-btn">🙏 Book Your Healing Session Today</button>
-        <p style="margin-top:10px;font-size:.9em;color:var(--gray);">Start your journey to complete wellness</p>
-      </div>
-    </div>
+<!-- Holistic Section -->
+<div class="section-card">
+  <h2>🌿 Our Holistic Wellness Approach</h2>
+  <div class="holistic-grid">
+    <div class="holistic-card"><div class="icon">🥗</div><h3>Nutrition</h3><p>Personalized meal plans and premium Herbalife nutrition products for optimal health</p></div>
+    <div class="holistic-card"><div class="icon">💪</div><h3>Fitness</h3><p>Customized workout programs designed for your body type and goals</p></div>
+    <div class="holistic-card"><div class="icon">🧘</div><h3>Wellness</h3><p>Mind-body balance through yoga, meditation, and lifestyle coaching</p></div>
+    <div class="holistic-card"><div class="icon">📊</div><h3>Tracking</h3><p>Regular progress monitoring and adjustments for consistent results</p></div>
+    <div class="holistic-card"><div class="icon">🎯</div><h3>Goal Setting</h3><p>Clear, achievable milestones to keep you motivated and on track</p></div>
+    <div class="holistic-card"><div class="icon">👥</div><h3>Community</h3><p>Supportive network of like-minded individuals on their wellness journey</p></div>
   </div>
 </div>
 
-<!-- Admin Login Modal -->
-<div id="loginModal" class="login-modal">
-  <div class="login-card">
-    <div class="login-head">
-      <h3>🔐 Admin Login</h3>
-    </div>
-    <div class="login-body">
-      <div class="login-row">
-        <label for="loginUser">Username</label>
-        <input id="loginUser" type="text" placeholder="Enter username" autocomplete="username" />
-      </div>
-      <div class="login-row">
-        <label for="loginPass">Password</label>
-        <input id="loginPass" type="password" placeholder="Enter password" autocomplete="current-password" />
-      </div>
-      <div class="login-actions">
-        <button id="btnCancelLogin" class="btn btn-secondary">Cancel</button>
-        <button id="btnDoLogin" class="btn">Login</button>
-      </div>
-      <div class="login-hint">
-        Default credentials: <strong>admin / herbalife2026</strong><br>
-        (Change inside <code>ADMIN_CREDENTIALS</code> in the script.)
-      </div>
-    </div>
-  </div>
+<!-- Gallery -->
+<div class="section-card">
+  <h2>✨ Transformation Gallery - Real Results</h2>
+  <div id="galleryGrid" class="gallery-grid"></div>
 </div>
 
-<!-- Admin FAB -->
+<!-- WhatsApp -->
+<div class="whatsapp-section">
+  <h2>💬 Ready to Start Your Transformation?</h2>
+  <p style="margin-bottom:20px;">Connect with me on WhatsApp for personalized guidance!</p>
+  <a id="whatsappLink" href="#" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">📱 Chat on WhatsApp</a>
+</div>
+
+<!-- Contact Form -->
+<div class="section-card">
+  <h2>📝 Get Your Free Consultation</h2>
+  <form id="contactForm" class="contact-form">
+    <div class="form-group"><label>Full Name *</label><input type="text" name="name" required /></div>
+    <div class="form-group"><label>Phone Number *</label><input type="tel" name="phone" required /></div>
+    <div class="form-group"><label>Email</label><input type="email" name="email" /></div>
+    <div class="form-group"><label>Your Health Goal *</label>
+      <select name="goal" required><option value="">Select your goal</option><option>Weight Loss</option><option>Weight Gain / Muscle Building</option><option>Overall Fitness</option><option>Better Nutrition</option><option>More Energy</option><option>Lifestyle Change</option></select></div>
+    <div class="form-group"><label>Tell us about yourself</label><textarea name="message"></textarea></div>
+    <button type="submit" class="btn" style="width:100%;font-size:1.1em;">Submit &amp; Get Free Consultation</button>
+  </form>
+</div>
+
+<div class="footer"><p>© 2026 <span id="footerName">Your Name</span> - Herbalife Independent Distributor</p><p>Transforming Lives Through Wellness | Ludhiana, Punjab, India</p></div>
+</div>
+
 <button id="adminFab" class="toggle-admin">⚙️ Admin</button>
-
-<!-- Toast -->
 <div id="toast" class="toast"></div>
 
 <script>
-/************************
- * Security + Storage
- ************************/
-const ADMIN_CREDENTIALS = { username: "admin", password: "herbalife2026" };
-const STORAGE_KEYS = { settings: "wc_settings_v1", gallery: "wc_gallery_v1" };
+const STORAGE_KEYS={settings:"wc_settings_v3"};
+const DEFAULT_SETTINGS={coachName:"Your Name",coachPhoto:"",whatsappNumber:"7973359934",tagline:"Transform Your Body, Transform Your Life",aboutText:"Certified Wellness Coach & Nutrition Expert\nHelping people achieve their health goals through personalized nutrition and fitness guidance.",googleFormUrl:""};
 
-// FIX 3: coachPhoto field added to DEFAULT_SETTINGS
-const DEFAULT_SETTINGS = {
-  coachName: "Gagan Verma",
-  coachPhoto: "",
-  whatsappNumber: "7973359934",
-  tagline: "Transform Your Body, Transform Your Life",
-  aboutText: "Certified Wellness Coach & Nutrition Expert\nHelping people achieve their health goals through personalized nutrition and fitness guidance.",
-  googleFormUrl: "",
-};
+// ── All 43 GitHub-hosted images (auto-loaded, visible on every device) ──
+const GALLERY_IMAGES = [
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2822512%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2822679%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2822849%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2822893%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2823434%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2823762%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2823859%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2823922%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2823947%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2824052%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2824538%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2824629%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2824938%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2825077%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2825398%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2825525%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2825656%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2825817%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2826638%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2826698%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2826834%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2826854%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2827020%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2827042%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2827072%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2827134%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2827460%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2827733%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2827817%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2827890%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2827968%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2828005%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2828066%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2828284%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2828290%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2828301%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2828721%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2828756%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2828814%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2828858%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2829226%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2829606%29.jpeg",
+    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2829692%29.jpeg"
+  ];
 
-const MAX_IMAGES = 10;
-let galleryImages = [];
-let isAdminLoggedIn = false;
-let isAdminModeActive = false;
+const $=id=>document.getElementById(id);
 
-/************************
- * FIX 1 & 2: Safe Storage Wrappers
- ************************/
-function storageSet(k, v) {
-  try { localStorage.setItem(k, v); }
-  catch(e) { window._mem = window._mem || {}; window._mem[k] = v; }
-}
-function storageGet(k) {
-  try {
-    const v = localStorage.getItem(k);
-    if (v !== null) return v;
-  } catch(e) {}
-  return (window._mem && window._mem[k]) || null;
-}
-function storageRemove(k) {
-  try { localStorage.removeItem(k); } catch(e) {}
-  if (window._mem) delete window._mem[k];
-}
-function sessionSet(k, v) {
-  try { sessionStorage.setItem(k, v); }
-  catch(e) { window._sess = window._sess || {}; window._sess[k] = v; }
-}
-function sessionGet(k) {
-  try {
-    const v = sessionStorage.getItem(k);
-    if (v !== null) return v;
-  } catch(e) {}
-  return (window._sess && window._sess[k]) || null;
-}
-function sessionRemove(k) {
-  try { sessionStorage.removeItem(k); } catch(e) {}
-  if (window._sess) delete window._sess[k];
-}
+function storageSet(k,v){try{localStorage.setItem(k,v)}catch(e){window._m=window._m||{};window._m[k]=v}}
+function storageGet(k){try{const v=localStorage.getItem(k);if(v!==null)return v}catch(e){}return(window._m&&window._m[k])||null}
+function safeJsonParse(s,f){try{return JSON.parse(s)??f}catch{return f}}
+function loadSettings(){const r=storageGet(STORAGE_KEYS.settings);const s=r?safeJsonParse(r,DEFAULT_SETTINGS):DEFAULT_SETTINGS;return{...DEFAULT_SETTINGS,...s}}
+function saveSettings(s){storageSet(STORAGE_KEYS.settings,JSON.stringify(s))}
 
-/************************
- * Helpers
- ************************/
-const $ = (id) => document.getElementById(id);
+function showToast(msg){const t=$("toast");t.textContent=msg;t.style.display="block";clearTimeout(showToast._t);showToast._t=setTimeout(()=>t.style.display="none",2000)}
 
-function showToast(msg) {
-  const t = $("toast");
-  t.textContent = msg;
-  t.style.display = "block";
-  clearTimeout(showToast._timer);
-  showToast._timer = setTimeout(() => (t.style.display = "none"), 2200);
-}
-
-function safeJsonParse(str, fallback) {
-  try { return JSON.parse(str) ?? fallback; } catch { return fallback; }
-}
-
-// FIX 1b
-function loadSettings() {
-  const raw = storageGet(STORAGE_KEYS.settings);
-  const s = raw ? safeJsonParse(raw, DEFAULT_SETTINGS) : DEFAULT_SETTINGS;
-  return { ...DEFAULT_SETTINGS, ...s };
+function applySettingsToPage(s){
+  const hp=$("heroProfilePhoto"),pp=$("coachPhotoPreview"),rb=$("btnRemovePhoto");
+  if(s.coachPhoto){hp.src=s.coachPhoto;hp.style.display="block";pp.src=s.coachPhoto;pp.style.display="block";rb.style.display="inline-block"}
+  else{hp.style.display="none";pp.style.display="none";rb.style.display="none"}
+  $("displayName").textContent=s.coachName;
+  $("displayTagline").textContent=s.tagline;
+  $("displayAbout").innerHTML=(s.aboutText||"").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\n/g,"<br>");
+  $("footerName").textContent=s.coachName;
+  $("whatsappLink").href=`https://wa.me/${s.whatsappNumber}?text=${encodeURIComponent("Hi "+s.coachName+", I am interested in your wellness coaching!")}`;
+  $("contactForm").dataset.formUrl=s.googleFormUrl||"";
+  $("coachName").value=s.coachName;$("whatsappNumber").value=s.whatsappNumber;
+  $("tagline").value=s.tagline;$("aboutText").value=s.aboutText;$("googleFormUrl").value=s.googleFormUrl;
 }
 
-// FIX 1c
-function saveSettings(settings) {
-  storageSet(STORAGE_KEYS.settings, JSON.stringify(settings));
-}
-
-// FIX 1d
-function loadGallery() {
-  const raw = storageGet(STORAGE_KEYS.gallery);
-  const arr = raw ? safeJsonParse(raw, []) : [];
-  return Array.isArray(arr) ? arr.slice(0, MAX_IMAGES) : [];
-}
-
-// FIX 1e
-function saveGallery() {
-  storageSet(STORAGE_KEYS.gallery, JSON.stringify(galleryImages.slice(0, MAX_IMAGES)));
-}
-
-// FIX 2b
-function readAdminSession() {
-  return sessionGet("wc_admin_logged_in") === "1";
-}
-function writeAdminSession(val) {
-  if (val) sessionSet("wc_admin_logged_in", "1");
-  else sessionRemove("wc_admin_logged_in");
-}
-
-/************************
- * Page Update
- ************************/
-// FIX 7
-function updatePageFromInputsAndSave() {
-  const prevSettings = loadSettings();
-
-  const settings = {
-    coachName: $("coachName").value.trim() || DEFAULT_SETTINGS.coachName,
-    coachPhoto: (
-      $("coachPhotoPreview").style.display !== "none" &&
-      $("coachPhotoPreview").src &&
-      !$("coachPhotoPreview").src.endsWith(window.location.href)
-    ) ? $("coachPhotoPreview").src : (prevSettings.coachPhoto || ""),
-    whatsappNumber: $("whatsappNumber").value.trim() || DEFAULT_SETTINGS.whatsappNumber,
-    tagline: $("tagline").value.trim() || DEFAULT_SETTINGS.tagline,
-    aboutText: $("aboutText").value.trim() || DEFAULT_SETTINGS.aboutText,
-    googleFormUrl: $("googleFormUrl").value.trim() || "",
-  };
-
-  applySettingsToPage(settings);
-  saveSettings(settings);
-  $("successMessage").style.display = "block";
-  setTimeout(() => ($("successMessage").style.display = "none"), 2000);
-  showToast("Saved!");
-}
-
-// FIX 6
-function applySettingsToPage(settings) {
-  // Coach Profile Photo
-  const heroPhoto = $("heroProfilePhoto");
-  const previewPhoto = $("coachPhotoPreview");
-  const removeBtn = $("btnRemovePhoto");
-
-  if (settings.coachPhoto) {
-    heroPhoto.src = settings.coachPhoto;
-    heroPhoto.style.display = "block";
-    previewPhoto.src = settings.coachPhoto;
-    previewPhoto.style.display = "block";
-    if (removeBtn) removeBtn.style.display = "inline-block";
-  } else {
-    heroPhoto.style.display = "none";
-    previewPhoto.style.display = "none";
-    if (removeBtn) removeBtn.style.display = "none";
-  }
-
-  $("displayName").textContent = settings.coachName;
-  $("displayTagline").textContent = settings.tagline;
-  $("displayAbout").innerHTML = (settings.aboutText || "")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/\n/g, "<br>");
-  $("footerName").textContent = settings.coachName;
-
-  const message = encodeURIComponent(`Hi ${settings.coachName}, I'm interested in your wellness coaching program!`);
-  $("whatsappLink").href = `https://wa.me/${settings.whatsappNumber}?text=${message}`;
-
-  $("contactForm").dataset.formUrl = settings.googleFormUrl || "";
-
-  // Fill admin inputs
-  $("coachName").value = settings.coachName;
-  $("whatsappNumber").value = settings.whatsappNumber;
-  $("tagline").value = settings.tagline;
-  $("aboutText").value = settings.aboutText;
-  $("googleFormUrl").value = settings.googleFormUrl;
-}
-
-/************************
- * Admin Login Flow
- ************************/
-function openLoginModal() {
-  $("loginUser").value = "";
-  $("loginPass").value = "";
-  $("loginModal").style.display = "flex";
-  setTimeout(() => $("loginUser").focus(), 50);
-  document.body.style.overflow = "hidden";
-}
-
-function closeLoginModal() {
-  $("loginModal").style.display = "none";
-  document.body.style.overflow = "auto";
-}
-
-function doLogin() {
-  const u = $("loginUser").value.trim();
-  const p = $("loginPass").value;
-  if (u === ADMIN_CREDENTIALS.username && p === ADMIN_CREDENTIALS.password) {
-    isAdminLoggedIn = true;
-    writeAdminSession(true);
-    closeLoginModal();
-    showAdminPanel();
-    showToast("Admin login successful");
-  } else {
-    showToast("Invalid credentials");
-  }
-}
-
-function showAdminPanel() {
-  if (!isAdminLoggedIn) return;
-  const panel = $("adminPanel");
-  panel.style.display = "block";
-  panel.setAttribute("aria-hidden", "false");
-  isAdminModeActive = true;
-  renderGallery();
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
-function hideAdminPanel() {
-  const panel = $("adminPanel");
-  panel.style.display = "none";
-  panel.setAttribute("aria-hidden", "true");
-  isAdminModeActive = false;
-  renderGallery();
-}
-
-function logoutAdmin() {
-  isAdminLoggedIn = false;
-  writeAdminSession(false);
-  hideAdminPanel();
-  showToast("Logged out");
-}
-
-/************************
- * Gallery
- ************************/
-function addGalleryImage(file) {
-  if (!isAdminLoggedIn) { showToast("Login required"); return; }
-  if (galleryImages.length >= MAX_IMAGES) { showToast(`Max ${MAX_IMAGES} images allowed`); return; }
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = function(e) {
-    galleryImages.push(e.target.result);
-    saveGallery();
-    renderGallery();
-    showToast("Image added");
-  };
-  reader.readAsDataURL(file);
-}
-
-function removeGalleryImage(index) {
-  if (!isAdminLoggedIn || !isAdminModeActive) { showToast("Not allowed"); return; }
-  galleryImages.splice(index, 1);
-  saveGallery();
-  renderGallery();
-  showToast("Image removed");
-}
-
-function renderGallery() {
-  const grid = $("galleryGrid");
-  grid.innerHTML = "";
-  if (galleryImages.length === 0) {
-    const item = document.createElement("div");
-    item.className = "gallery-item";
-    item.innerHTML = `<div class="gallery-placeholder">📸 Add Your First Transformation</div>`;
+function renderGallery(){
+  const grid=$("galleryGrid");grid.innerHTML="";
+  GALLERY_IMAGES.forEach((src,i)=>{
+    const item=document.createElement("div");item.className="gallery-item";
+    item.innerHTML=`<span class="gallery-badge">Result ${i+1}</span><img src="${src}" alt="Transformation ${i+1}" loading="lazy"><div class="overlay"><h4>Transformation ${i+1}</h4><p>Real results from real people</p></div>`;
     grid.appendChild(item);
-  } else {
-    galleryImages.forEach((src, index) => {
-      const item = document.createElement("div");
-      item.className = "gallery-item";
-      const canShowDelete = isAdminLoggedIn && isAdminModeActive;
-      const removeBtn = canShowDelete
-        ? `<button class="remove-btn" aria-label="Remove image" data-remove="${index}">×</button>` : "";
-      item.innerHTML = `
-        ${removeBtn}
-        <img src="${src}" alt="Transformation ${index + 1}" loading="lazy">
-        <div class="overlay">
-          <h4>Transformation ${index + 1}</h4>
-          <p>Real results from real people</p>
-        </div>`;
-      grid.appendChild(item);
-    });
-  }
-  if (galleryImages.length < MAX_IMAGES) {
-    const placeholder = document.createElement("div");
-    placeholder.className = "gallery-item";
-    placeholder.innerHTML = `<div class="gallery-placeholder">📸 Gallery Slot ${galleryImages.length + 1}/${MAX_IMAGES}</div>`;
-    grid.appendChild(placeholder);
-  }
-  grid.querySelectorAll("[data-remove]").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      const idx = parseInt(e.currentTarget.getAttribute("data-remove"), 10);
-      removeGalleryImage(idx);
-    });
   });
 }
 
-/************************
- * Contact Form
- ************************/
-function submitForm(e) {
-  e.preventDefault();
-  const formUrl = $("contactForm").dataset.formUrl || "";
-  if (!formUrl) { showToast("Admin must add Google Form URL first"); return; }
-  window.open(formUrl, "_blank", "noopener");
-  e.target.reset();
-  showToast("Please complete the form in new tab");
-}
-
-/************************
- * Info Modals
- ************************/
-function openModal(type) {
-  const el = type === "nutrition" ? $("nutritionModal") : $("wellnessModal");
-  el.style.display = "block";
-  el.setAttribute("aria-hidden", "false");
-  document.body.style.overflow = "hidden";
-}
-
-function closeModal(type) {
-  const el = type === "nutrition" ? $("nutritionModal") : $("wellnessModal");
-  el.style.display = "none";
-  el.setAttribute("aria-hidden", "true");
-  document.body.style.overflow = "auto";
-}
-
-function scrollToContact() {
-  document.querySelector(".contact-section").scrollIntoView({ behavior: "smooth" });
-}
-
-/************************
- * Init + Events
- ************************/
-window.addEventListener("load", () => {
-  isAdminLoggedIn = readAdminSession();
-  isAdminModeActive = false;
-
-  const settings = loadSettings();
-  applySettingsToPage(settings);
-  galleryImages = loadGallery();
-  renderGallery();
-
-  $("adminPanel").style.display = "none";
-  $("adminPanel").setAttribute("aria-hidden", "true");
-});
-
-$("adminFab").addEventListener("click", () => {
-  const panelVisible = $("adminPanel").style.display === "block";
-  if (panelVisible) { hideAdminPanel(); return; }
-  if (!isAdminLoggedIn) openLoginModal();
-  else showAdminPanel();
-});
-
-$("btnCancelLogin").addEventListener("click", closeLoginModal);
-$("btnDoLogin").addEventListener("click", doLogin);
-$("loginModal").addEventListener("click", (e) => { if (e.target === $("loginModal")) closeLoginModal(); });
-
-document.addEventListener("keydown", (e) => {
-  if ($("loginModal").style.display === "flex" && e.key === "Escape") closeLoginModal();
-  if (e.key === "Enter" && $("loginModal").style.display === "flex") doLogin();
-});
-
-$("btnUpdate").addEventListener("click", updatePageFromInputsAndSave);
-$("btnHideAdmin").addEventListener("click", hideAdminPanel);
-$("btnLogout").addEventListener("click", logoutAdmin);
-
-// FIX 8: Coach Photo Upload & Remove Event Listeners
-$("coachPhotoUpload").addEventListener("change", (e) => {
-  const file = e.target.files && e.target.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = function(ev) {
-    $("coachPhotoPreview").src = ev.target.result;
-    $("coachPhotoPreview").style.display = "block";
-    $("btnRemovePhoto").style.display = "inline-block";
-    showToast("📷 Photo ready! Save karo apply karne ke liye.");
+function saveChanges(){
+  const prev=loadSettings();
+  const s={
+    coachName:$("coachName").value.trim()||DEFAULT_SETTINGS.coachName,
+    coachPhoto:($("coachPhotoPreview").style.display!=="none"&&$("coachPhotoPreview").src&&!$("coachPhotoPreview").src.endsWith(window.location.href))?$("coachPhotoPreview").src:(prev.coachPhoto||""),
+    whatsappNumber:$("whatsappNumber").value.trim()||DEFAULT_SETTINGS.whatsappNumber,
+    tagline:$("tagline").value.trim()||DEFAULT_SETTINGS.tagline,
+    aboutText:$("aboutText").value.trim()||DEFAULT_SETTINGS.aboutText,
+    googleFormUrl:$("googleFormUrl").value.trim()||""
   };
-  reader.readAsDataURL(file);
-  e.target.value = "";
-});
+  applySettingsToPage(s);saveSettings(s);
+  $("successMessage").style.display="block";
+  setTimeout(()=>$("successMessage").style.display="none",2000);showToast("Saved!");
+}
 
-$("btnRemovePhoto").addEventListener("click", () => {
-  $("coachPhotoPreview").src = "";
-  $("coachPhotoPreview").style.display = "none";
-  $("btnRemovePhoto").style.display = "none";
-  $("heroProfilePhoto").style.display = "none";
-  showToast("Photo remove ho gayi. Save karo.");
-});
-
-// Gallery file upload
-$("imageUpload").addEventListener("change", (e) => {
-  const file = e.target.files && e.target.files[0];
-  addGalleryImage(file);
-  e.target.value = "";
-});
-
-$("contactForm").addEventListener("submit", submitForm);
-
-document.querySelectorAll(".holistic-card[data-modal]").forEach((card) => {
-  card.addEventListener("click", () => openModal(card.dataset.modal));
-});
-
-document.querySelectorAll(".close-modal").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const t = btn.getAttribute("data-close");
-    closeModal(t);
-  });
-});
-
-$("btnNutritionCTA").addEventListener("click", () => { closeModal("nutrition"); scrollToContact(); });
-$("btnWellnessCTA").addEventListener("click", () => { closeModal("wellness"); scrollToContact(); });
-
-window.addEventListener("click", (e) => {
-  if (e.target === $("nutritionModal")) closeModal("nutrition");
-  if (e.target === $("wellnessModal")) closeModal("wellness");
-});
+window.addEventListener("load",()=>{applySettingsToPage(loadSettings());renderGallery()});
+$("adminFab").addEventListener("click",()=>$("adminPanel").style.display=$("adminPanel").style.display==="block"?"none":"block");
+$("btnUpdate").addEventListener("click",saveChanges);
+$("btnHideAdmin").addEventListener("click",()=>$("adminPanel").style.display="none");
+$("coachPhotoUpload").addEventListener("change",e=>{const f=e.target.files&&e.target.files[0];if(!f)return;const r=new FileReader();r.onload=ev=>{$("coachPhotoPreview").src=ev.target.result;$("coachPhotoPreview").style.display="block";$("btnRemovePhoto").style.display="inline-block";showToast("Photo ready — Save karo!")};r.readAsDataURL(f);e.target.value=""});
+$("btnRemovePhoto").addEventListener("click",()=>{$("coachPhotoPreview").src="";$("coachPhotoPreview").style.display="none";$("btnRemovePhoto").style.display="none";$("heroProfilePhoto").style.display="none";showToast("Photo removed")});
+$("contactForm").addEventListener("submit",e=>{e.preventDefault();const u=$("contactForm").dataset.formUrl;if(!u){showToast("Admin: Google Form URL add karo");return}window.open(u,"_blank","noopener");e.target.reset();showToast("Form khul gaya — fill karo")});
 </script>
 </body>
 </html>
