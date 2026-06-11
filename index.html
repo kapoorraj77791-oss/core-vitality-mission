@@ -204,11 +204,10 @@ const GALLERY_IMAGES = [
 
 const $=id=>document.getElementById(id);
 
-function storageSet(k,v){try{localStorage.setItem(k,v)}catch(e){window._m=window._m||{};window._m[k]=v}}
-function storageGet(k){try{const v=localStorage.getItem(k);if(v!==null)return v}catch(e){}return(window._m&&window._m[k])||null}
-function safeJsonParse(s,f){try{return JSON.parse(s)??f}catch{return f}}
-function loadSettings(){const r=storageGet(STORAGE_KEYS.settings);const s=r?safeJsonParse(r,DEFAULT_SETTINGS):DEFAULT_SETTINGS;return{...DEFAULT_SETTINGS,...s}}
-function saveSettings(s){storageSet(STORAGE_KEYS.settings,JSON.stringify(s))}
+function storageSet(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}window._mem=window._mem||{};window._mem[k]=v}
+function storageGet(k){window._mem=window._mem||{};if(window._mem[k]!==undefined)return window._mem[k];try{const v=localStorage.getItem(k);if(v!==null){const p=JSON.parse(v);window._mem[k]=p;return p}}catch(e){}return null}
+function loadSettings(){const s=storageGet(STORAGE_KEYS.settings);return s?{...DEFAULT_SETTINGS,...s}:{...DEFAULT_SETTINGS}}
+function saveSettings(s){storageSet(STORAGE_KEYS.settings,s)}
 
 function showToast(msg){const t=$("toast");t.textContent=msg;t.style.display="block";clearTimeout(showToast._t);showToast._t=setTimeout(()=>t.style.display="none",2000)}
 
@@ -230,7 +229,7 @@ function renderGallery(){
   const grid=$("galleryGrid");grid.innerHTML="";
   GALLERY_IMAGES.forEach((src,i)=>{
     const item=document.createElement("div");item.className="gallery-item";
-    item.innerHTML=`<span class="gallery-badge">Result ${i+1}</span><img src="${src}" alt="Transformation ${i+1}" loading="lazy"><div class="overlay"><h4>Transformation ${i+1}</h4><p>Real results from real people</p></div>`;
+    item.innerHTML=`<span class="gallery-badge">Result ${i+1}</span><img src="${src}" alt="Transformation ${i+1}" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"><div class="overlay"><h4>Transformation ${i+1}</h4><p>Real results from real people</p></div>`;
     grid.appendChild(item);
   });
 }
@@ -245,7 +244,7 @@ function saveChanges(){
     aboutText:$("aboutText").value.trim()||DEFAULT_SETTINGS.aboutText,
     googleFormUrl:$("googleFormUrl").value.trim()||""
   };
-  applySettingsToPage(s);saveSettings(s);
+  applySettingsToPage(s);saveSettings(s);showToast('✅ Saved!');
   $("successMessage").style.display="block";
   setTimeout(()=>$("successMessage").style.display="none",2000);showToast("Saved!");
 }
