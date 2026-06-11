@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Transform Your Life - Herbalife Wellness Coach</title>
+<title>Gagan Verma - Certified Wellness Coach | Ludhiana</title>
 <style>
 :root{--primary-green:#7CB342;--dark-green:#558B2F;--accent-green:#9CCC65;--black:#1a1a1a;--gray:#4a4a4a;--light-bg:#f4f7f4;--white:#ffffff;--danger:#e53935}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:linear-gradient(135deg,#f4f7f4 0%,#e8f0e8 100%);color:var(--black);line-height:1.6}
-.texture-overlay{position:fixed;inset:0;background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%23558B2F" opacity="0.03"/></svg>');background-size:50px 50px;pointer-events:none;z-index:1}
+.texture-overlay{position:fixed;inset:0;background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">ircle cx="50" cy="50" r="1" fill="%23558B2F" opacity="0.03"/></svg>');background-size:50px 50px;pointer-events:none;z-index:1}
 .container{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:20px}
 .organization-header{position:fixed;top:20px;left:20px;background:rgba(255,255,255,.95);padding:14px 22px;border-radius:12px;box-shadow:0 6px 22px rgba(85,139,47,.18);z-index:1000;border:2px solid var(--primary-green);backdrop-filter:blur(6px)}
 .organization-header h3{margin:0;color:var(--dark-green);font-size:1.15em;font-weight:800}
@@ -25,13 +25,34 @@ body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:linear-g
 .control-group input,.control-group textarea{padding:12px;border:2px solid var(--accent-green);border-radius:10px;font-size:16px;transition:all .25s ease}
 .control-group textarea{resize:vertical}
 .success-message{background:#4CAF50;color:#fff;padding:14px;border-radius:10px;margin-top:14px;display:none;font-weight:700}
+/* STATS BAR */
+.stats-bar{background:linear-gradient(135deg,var(--dark-green) 0%,#2e7d32 100%);color:#fff;padding:18px 30px;border-radius:16px;margin-bottom:20px;display:flex;justify-content:space-around;flex-wrap:wrap;gap:12px;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.stat-item{text-align:center}
+.stat-number{font-size:2em;font-weight:900;color:#9CCC65;display:block}
+.stat-label{font-size:0.85em;opacity:0.9}
+/* URGENCY BAR */
+.urgency-bar{background:linear-gradient(135deg,#e65100 0%,#bf360c 100%);color:#fff;padding:14px 24px;border-radius:12px;text-align:center;margin-bottom:20px;font-weight:700;font-size:1.05em;animation:urgencyPulse 2s ease-in-out infinite;box-shadow:0 6px 18px rgba(230,81,0,.3)}
+@keyframes urgencyPulse{0%,100%{opacity:1}50%{opacity:0.85}}
+/* HERO */
 .hero-banner{background:linear-gradient(135deg,var(--dark-green) 0%,var(--black) 100%);color:#fff;padding:60px 40px;border-radius:22px;text-align:center;margin-bottom:40px;box-shadow:0 18px 45px rgba(0,0,0,.28);position:relative;overflow:hidden}
 .hero-banner::before{content:'';position:absolute;top:-50%;right:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(124,179,66,.11) 0%,transparent 70%);animation:pulse 15s ease-in-out infinite}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
 .hero-content{position:relative;z-index:1}
-.hero-banner h1{font-size:3em;margin-bottom:12px;text-shadow:2px 2px 4px rgba(0,0,0,.3)}
+.hero-banner h1{font-size:3em;margin-bottom:8px;text-shadow:2px 2px 4px rgba(0,0,0,.3)}
+.hero-hindi{font-size:1.3em;color:#9CCC65;font-weight:700;margin-bottom:10px}
 .hero-banner .tagline{font-size:1.5em;margin-bottom:10px;color:var(--accent-green);font-weight:800}
-.hero-banner .subtitle{font-size:1.1em;opacity:.92}
+.hero-banner .subtitle{font-size:1.1em;opacity:.92;margin-bottom:24px}
+.hero-cta-btn{background:linear-gradient(135deg,#9CCC65,#7CB342);color:#1a1a1a;padding:16px 40px;border-radius:999px;font-size:1.1em;font-weight:900;text-decoration:none;display:inline-block;transition:all .25s ease;box-shadow:0 6px 20px rgba(124,179,66,.4);border:none;cursor:pointer;margin-top:8px}
+.hero-cta-btn:hover{transform:scale(1.05);box-shadow:0 10px 28px rgba(124,179,66,.5)}
+/* ABOUT */
+.about-section{background:linear-gradient(135deg,#fff 0%,#f4f7f4 100%);border-radius:16px;padding:40px;margin-bottom:40px;box-shadow:0 10px 30px rgba(85,139,47,.12);border-left:5px solid var(--primary-green)}
+.about-section h2{color:var(--dark-green);font-size:2em;margin-bottom:20px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:600px){.about-grid{grid-template-columns:1fr}}
+.about-point{display:flex;align-items:flex-start;gap:12px;padding:14px;background:#fff;border-radius:12px;box-shadow:0 4px 12px rgba(85,139,47,.08)}
+.about-icon{font-size:1.8em;flex-shrink:0}
+.about-text h4{color:var(--dark-green);font-weight:800;margin-bottom:4px}
+.about-text p{color:var(--gray);font-size:0.9em}
 .section-card{background:#fff;border-radius:16px;padding:40px;margin-bottom:40px;box-shadow:0 10px 30px rgba(85,139,47,.12)}
 .section-card h2{color:var(--dark-green);text-align:center;margin-bottom:30px;font-size:2.2em}
 .holistic-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
@@ -39,7 +60,6 @@ body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:linear-g
 .holistic-card:hover{transform:translateY(-6px);box-shadow:0 12px 26px rgba(124,179,66,.18)}
 .holistic-card .icon{font-size:3em;margin-bottom:12px}
 .holistic-card h3{color:var(--dark-green);margin-bottom:8px}
-/* Gallery */
 .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
 .gallery-item{position:relative;border-radius:14px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.15);transition:all .25s ease;border:3px solid var(--primary-green);background:var(--light-bg)}
 .gallery-item:hover{transform:scale(1.02);box-shadow:0 16px 32px rgba(124,179,66,.2)}
@@ -47,215 +67,45 @@ body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:linear-g
 .gallery-item .overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,.8),transparent);color:#fff;padding:14px;transform:translateY(100%);transition:all .25s ease}
 .gallery-item:hover .overlay{transform:translateY(0)}
 .gallery-badge{position:absolute;top:10px;left:10px;background:var(--primary-green);color:#fff;font-size:11px;font-weight:800;padding:4px 10px;border-radius:999px}
-/* WhatsApp */
 .whatsapp-section{background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);color:#fff;padding:40px;border-radius:16px;text-align:center;margin-bottom:40px;box-shadow:0 10px 26px rgba(37,211,102,.22)}
 .whatsapp-btn{background:#fff;color:#25D366;padding:15px 38px;border-radius:999px;font-size:1.15em;font-weight:900;text-decoration:none;display:inline-block;transition:all .25s ease}
 .whatsapp-btn:hover{transform:scale(1.05)}
-/* Contact */
 .contact-form{max-width:600px;margin:0 auto}
 .form-group{margin-bottom:18px}
 .form-group label{display:block;margin-bottom:8px;font-weight:800;color:var(--gray)}
 .form-group input,.form-group textarea,.form-group select{width:100%;padding:12px;border:2px solid var(--accent-green);border-radius:10px;font-size:16px}
 .form-group textarea{min-height:120px}
+/* FORM PROMISE */
+.form-promise{background:linear-gradient(135deg,#e8f5e9,#f1f8e9);border:2px solid var(--accent-green);border-radius:12px;padding:16px 20px;margin-bottom:20px;text-align:center;color:var(--dark-green);font-weight:700;font-size:0.95em}
 .footer{text-align:center;padding:18px;color:var(--gray);font-size:.9em}
 .toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:rgba(0,0,0,.86);color:#fff;padding:12px 22px;border-radius:999px;font-weight:800;z-index:4000;display:none;white-space:nowrap}
-@media(max-width:768px){.hero-banner h1{font-size:2em}.hero-banner .tagline{font-size:1.2em}.admin-controls{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.gallery-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.hero-banner h1{font-size:2em}.hero-banner .tagline{font-size:1.2em}.admin-controls{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr 1fr}.stats-bar{gap:18px}}
+@media(max-width:480px){.gallery-grid{grid-template-columns:1fr}.stats-bar{flex-direction:column;align-items:center}}
 </style>
 </head>
 <body>
 <div class="texture-overlay"></div>
-<div class="organization-header"><h3>🌿 CORE VITALITY MISSION</h3></div>
 <div class="container">
 
-<!-- Admin Panel -->
-<div id="adminPanel" class="admin-panel">
-  <h2>🔧 Admin Panel - Customize Your Page</h2>
-  <div class="admin-controls">
-    <div class="control-group">
-      <label for="coachPhotoUpload">📷 Profile Photo:</label>
-      <input type="file" id="coachPhotoUpload" accept="image/*" style="padding:8px;" />
-      <div style="margin-top:8px;display:flex;align-items:center;gap:12px;">
-        <img id="coachPhotoPreview" src="" alt="Preview" style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid #7CB342;display:none;" />
-        <button type="button" id="btnRemovePhoto" class="btn btn-danger" style="display:none;padding:8px 14px;font-size:13px;">🗑 Remove Photo</button>
+  <!-- ADMIN PANEL -->
+  <div id="adminPanel" class="admin-panel">
+    <h2>🔧 Admin Panel - Customize Your Page</h2>
+    <div class="admin-controls">
+      <div class="control-group">
+        abel>Gagan Verma / Coach Name:</label>
+        <input type="text" id="coachName" placeholder="GAGAN VERMA">
       </div>
-    </div>
-    <div class="control-group"><label for="coachName">Gagan Verma / Coach Name:</label><input type="text" id="coachName" placeholder="GAGAN VERMA" /></div>
-    <div class="control-group"><label for="whatsappNumber">WhatsApp Number:</label><input type="tel" id="whatsappNumber" placeholder="7973359934" /></div>
-    <div class="control-group"><label for="tagline">Tagline / Subtitle:</label><input type="text" id="tagline" placeholder="Your transformation journey starts here" /></div>
-    <div class="control-group"><label for="googleFormUrl">Google Form URL:</label><input type="url" id="googleFormUrl" placeholder="https://forms.gle/..." /></div>
-    <div class="control-group"><label for="aboutText">About You:</label><textarea id="aboutText" rows="4"></textarea></div>
-  </div>
-  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;">
-    <button id="btnUpdate" class="btn">✅ Save Changes</button>
-    <button id="btnHideAdmin" class="btn btn-secondary">Hide Panel</button>
-  </div>
-  <div id="successMessage" class="success-message">✅ Page updated successfully!</div>
-</div>
-
-<!-- Hero -->
-<div class="hero-banner">
-  <div class="hero-content">
-    <div style="margin-bottom:16px;">
-      <img id="heroProfilePhoto" src="" alt="Coach Photo" style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid #9CCC65;box-shadow:0 6px 22px rgba(0,0,0,.35);display:none;margin:0 auto;" />
-    </div>
-    <h1 id="displayName">Gagan Verma</h1>
-    <div class="tagline" id="displayTagline">Transform Your Body, Transform Your Life</div>
-    <div class="subtitle" id="displayAbout">Certified Wellness Coach &amp; Nutrition Expert<br>Helping people achieve their health goals through personalized nutrition and fitness guidance.</div>
-  </div>
-</div>
-
-<!-- Holistic Section -->
-<div class="section-card">
-  <h2>🌿 Our Holistic Wellness Approach</h2>
-  <div class="holistic-grid">
-    <div class="holistic-card"><div class="icon">🥗</div><h3>Nutrition</h3><p>Personalized meal plans and premium Herbalife nutrition products for optimal health</p></div>
-    <div class="holistic-card"><div class="icon">💪</div><h3>Fitness</h3><p>Customized workout programs designed for your body type and goals</p></div>
-    <div class="holistic-card"><div class="icon">🧘</div><h3>Wellness</h3><p>Mind-body balance through yoga, meditation, and lifestyle coaching</p></div>
-    <div class="holistic-card"><div class="icon">📊</div><h3>Tracking</h3><p>Regular progress monitoring and adjustments for consistent results</p></div>
-    <div class="holistic-card"><div class="icon">🎯</div><h3>Goal Setting</h3><p>Clear, achievable milestones to keep you motivated and on track</p></div>
-    <div class="holistic-card"><div class="icon">👥</div><h3>Community</h3><p>Supportive network of like-minded individuals on their wellness journey</p></div>
-  </div>
-</div>
-
-<!-- Gallery -->
-<div class="section-card">
-  <h2>✨ Transformation Gallery - Real Results</h2>
-  <div id="galleryGrid" class="gallery-grid"></div>
-</div>
-
-<!-- WhatsApp -->
-<div class="whatsapp-section">
-  <h2>💬 Ready to Start Your Transformation?</h2>
-  <p style="margin-bottom:20px;">Connect with me on WhatsApp for personalized guidance!</p>
-  <a id="whatsappLink" href="#" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">📱 Chat on WhatsApp</a>
-</div>
-
-<!-- Contact Form -->
-<div class="section-card">
-  <h2>📝 Get Your Free Consultation</h2>
-  <form id="contactForm" class="contact-form">
-    <div class="form-group"><label>Full Name *</label><input type="text" name="name" required /></div>
-    <div class="form-group"><label>Phone Number *</label><input type="tel" name="phone" required /></div>
-    <div class="form-group"><label>Email</label><input type="email" name="email" /></div>
-    <div class="form-group"><label>Your Health Goal *</label>
-      <select name="goal" required><option value="">Select your goal</option><option>Weight Loss</option><option>Weight Gain / Muscle Building</option><option>Overall Fitness</option><option>Better Nutrition</option><option>More Energy</option><option>Lifestyle Change</option></select></div>
-    <div class="form-group"><label>Tell us about yourself</label><textarea name="message"></textarea></div>
-    <button type="submit" class="btn" style="width:100%;font-size:1.1em;">Submit &amp; Get Free Consultation</button>
-  </form>
-</div>
-
-<div class="footer"><p>© 2026 <span id="footerName">Gagan Verma</span> - Herbalife Independent Distributor</p><p>Transforming Lives Through Wellness | Ludhiana, Punjab, India</p></div>
-</div>
-
-<button id="adminFab" class="toggle-admin">⚙️ Admin</button>
-<div id="toast" class="toast"></div>
-
-<script>
-const STORAGE_KEYS={settings:"wc_settings_v3"};
-const DEFAULT_SETTINGS={coachName:"Gagan Verma",coachPhoto:"",whatsappNumber:"7973359934",tagline:"Transform Your Body, Transform Your Life",aboutText:"Certified Wellness Coach & Nutrition Expert\nHelping people achieve their health goals through personalized nutrition and fitness guidance.",googleFormUrl:""};
-
-// ── All 43 GitHub-hosted images (auto-loaded, visible on every device) ──
-const GALLERY_IMAGES = [
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2822512%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2822679%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2822849%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2822893%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2823434%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2823762%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2823859%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2823922%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2823947%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2824052%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2824538%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2824629%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2824938%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2825077%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2825398%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2825525%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2825656%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2825817%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2826638%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2826698%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2826834%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2826854%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2827020%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2827042%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2827072%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2827134%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2827460%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2827733%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2827817%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2827890%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2827968%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2828005%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2828066%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2828284%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2828290%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2828301%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2828721%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2828756%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2828814%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2828858%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2829226%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2829606%29.jpeg",
-    "https://raw.githubusercontent.com/kapoorraj77791-oss/core-vitality-mission/main/image%20%2829692%29.jpeg"
-  ];
-
-const $=id=>document.getElementById(id);
-
-function storageSet(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}window._mem=window._mem||{};window._mem[k]=v}
-function storageGet(k){window._mem=window._mem||{};if(window._mem[k]!==undefined)return window._mem[k];try{const v=localStorage.getItem(k);if(v!==null){const p=JSON.parse(v);window._mem[k]=p;return p}}catch(e){}return null}
-function loadSettings(){const s=storageGet(STORAGE_KEYS.settings);return s?{...DEFAULT_SETTINGS,...s}:{...DEFAULT_SETTINGS}}
-function saveSettings(s){storageSet(STORAGE_KEYS.settings,s)}
-
-function showToast(msg){const t=$("toast");t.textContent=msg;t.style.display="block";clearTimeout(showToast._t);showToast._t=setTimeout(()=>t.style.display="none",2000)}
-
-function applySettingsToPage(s){
-  const hp=$("heroProfilePhoto"),pp=$("coachPhotoPreview"),rb=$("btnRemovePhoto");
-  if(s.coachPhoto){hp.src=s.coachPhoto;hp.style.display="block";pp.src=s.coachPhoto;pp.style.display="block";rb.style.display="inline-block"}
-  else{hp.style.display="none";pp.style.display="none";rb.style.display="none"}
-  $("displayName").textContent=s.coachName;
-  $("displayTagline").textContent=s.tagline;
-  $("displayAbout").innerHTML=(s.aboutText||"").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\n/g,"<br>");
-  $("footerName").textContent=s.coachName;
-  $("whatsappLink").href=`https://wa.me/${s.whatsappNumber}?text=${encodeURIComponent("Hi "+s.coachName+", I am interested in your wellness coaching!")}`;
-  $("contactForm").dataset.formUrl=s.googleFormUrl||"";
-  $("coachName").value=s.coachName;$("whatsappNumber").value=s.whatsappNumber;
-  $("tagline").value=s.tagline;$("aboutText").value=s.aboutText;$("googleFormUrl").value=s.googleFormUrl;
-}
-
-function renderGallery(){
-  const grid=$("galleryGrid");grid.innerHTML="";
-  GALLERY_IMAGES.forEach((src,i)=>{
-    const item=document.createElement("div");item.className="gallery-item";
-    item.innerHTML=`<span class="gallery-badge">Result ${i+1}</span><img src="${src}" alt="Transformation ${i+1}" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"><div class="overlay"><h4>Transformation ${i+1}</h4><p>Real results from real people</p></div>`;
-    grid.appendChild(item);
-  });
-}
-
-function saveChanges(){
-  const prev=loadSettings();
-  const s={
-    coachName:$("coachName").value.trim()||DEFAULT_SETTINGS.coachName,
-    coachPhoto:($("coachPhotoPreview").style.display!=="none"&&$("coachPhotoPreview").src&&!$("coachPhotoPreview").src.endsWith(window.location.href))?$("coachPhotoPreview").src:(prev.coachPhoto||""),
-    whatsappNumber:$("whatsappNumber").value.trim()||DEFAULT_SETTINGS.whatsappNumber,
-    tagline:$("tagline").value.trim()||DEFAULT_SETTINGS.tagline,
-    aboutText:$("aboutText").value.trim()||DEFAULT_SETTINGS.aboutText,
-    googleFormUrl:$("googleFormUrl").value.trim()||""
-  };
-  applySettingsToPage(s);saveSettings(s);showToast('✅ Saved!');
-  $("successMessage").style.display="block";
-  setTimeout(()=>$("successMessage").style.display="none",2000);showToast("Saved!");
-}
-
-window.addEventListener("load",()=>{applySettingsToPage(loadSettings());renderGallery()});
-$("adminFab").addEventListener("click",()=>$("adminPanel").style.display=$("adminPanel").style.display==="block"?"none":"block");
-$("btnUpdate").addEventListener("click",saveChanges);
-$("btnHideAdmin").addEventListener("click",()=>$("adminPanel").style.display="none");
-$("coachPhotoUpload").addEventListener("change",e=>{const f=e.target.files&&e.target.files[0];if(!f)return;const r=new FileReader();r.onload=ev=>{$("coachPhotoPreview").src=ev.target.result;$("coachPhotoPreview").style.display="block";$("btnRemovePhoto").style.display="inline-block";showToast("Photo ready — Save karo!")};r.readAsDataURL(f);e.target.value=""});
-$("btnRemovePhoto").addEventListener("click",()=>{$("coachPhotoPreview").src="";$("coachPhotoPreview").style.display="none";$("btnRemovePhoto").style.display="none";$("heroProfilePhoto").style.display="none";showToast("Photo removed")});
-$("contactForm").addEventListener("submit",e=>{e.preventDefault();const u=$("contactForm").dataset.formUrl;if(!u){showToast("Admin: Google Form URL add karo");return}window.open(u,"_blank","noopener");e.target.reset();showToast("Form khul gaya — fill karo")});
-</script>
-</body>
-</html>
+      <div class="control-group">
+        abel>WhatsApp Number:</label>
+        <input type="tel" id="whatsappNumber" placeholder="7973359934">
+      </div>
+      <div class="control-group">
+        abel>Tagline / Subtitle:</label>
+        <input type="text" id="tagline" placeholder="Your transformation journey starts here">
+      </div>
+      <div class="control-group">
+        abel>Google Form URL:</label>
+        <input type="url" id="googleFormUrl" placeholder="https://forms.gle/...">
+      </div>
+      <div class="control-group">
+        abel>About
